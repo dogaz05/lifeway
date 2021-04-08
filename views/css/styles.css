@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  background-color: rgb(220, 220, 220);
+  background-color: rgba(220, 220, 220, 0.679);
   height: 100%;
   width: 100%;
 }
@@ -20,23 +20,65 @@ body {
   align-items: center;
 }
 
-.welcome {
-  text-align: center;
+.welcome-logo {
+  margin-top: -4rem;
+  width: 50%;
+  display: block;
 }
 
-.welcome-p {
-  text-align: center;
+.welcome-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.welcome-user-menu {
+.welcome-nav div {
+  margin: 1rem;
+}
+
+.welcome-nav-btn {
+  text-decoration: none;
+  background-color: #ffd200;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-weight: 700;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.welcome-nav-btn:hover {
+  box-shadow: 0 0 8px;
+}
+
+.welcome-nav u .welcome-user-menu {
   margin-top: 6rem;
 }
 
 .welcome-user-menu-container {
+  margin-top: -6rem;
+  display: none;
   background-color: darkgray;
   width: 300px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-user-menu-container .close-btn:hover {
+  color: #ffd200;
+  cursor: pointer;
+}
+
+#show:checked ~ .welcome-user-menu-container {
+  display: block;
+}
+
+input[type="checkbox"] {
+  display: none;
 }
 
 .welcome-user-menu-text {
@@ -63,7 +105,7 @@ form .data input {
 }
 
 .welcome-btn {
-  margin: 30px;
+  margin: 15px;
   text-align: center;
 }
 
@@ -82,12 +124,4 @@ form .data input {
 
 .welcome-btn button:hover {
   box-shadow: 0 0 8px;
-}
-
-.welcome-sign-up a {
-  text-decoration: none;
-}
-
-.welcome-sign-up a:hover {
-  text-decoration: underline;
 }
