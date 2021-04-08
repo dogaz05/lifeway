@@ -59,12 +59,32 @@ body {
   margin-top: 6rem;
 }
 
+.welcome-create-btn {
+  text-decoration: none;
+  color: #ffd200;
+  background-color: rgba(72, 72, 72);
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: 700;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.welcome-create-btn:hover {
+  box-shadow: 0 0 8px black;
+  color: #ffd200;
+}
+
 .welcome-user-menu-container {
   margin-top: -6rem;
   display: none;
   background-color: darkgray;
   width: 300px;
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -112,7 +132,7 @@ form .data input {
 .welcome-btn button {
   background-color: #ffd200;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 100%;
   font-weight: 700;
   padding: 0.5rem;
