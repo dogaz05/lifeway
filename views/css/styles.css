@@ -1,0 +1,93 @@
+/* GENERAL
+************/
+
+html {
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  background-color: rgb(220, 220, 220);
+  height: 100%;
+  width: 100%;
+}
+
+/* WELCOME VIEW
+*****************/
+
+.welcome-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.welcome-p {
+  text-align: center;
+}
+
+.welcome-user-menu {
+  margin-top: 6rem;
+}
+
+.welcome-user-menu-container {
+  background-color: darkgray;
+  width: 300px;
+  padding: 30px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-user-menu-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.welcome-user-menu-text form .data {
+  height: 45%;
+  width: 100%;
+}
+
+form .data input {
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  border: 1px solid lightgray;
+}
+
+.welcome-forgot-pass {
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.welcome-btn {
+  margin: 30px;
+  text-align: center;
+}
+
+.welcome-btn button {
+  background-color: #ffd200;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-weight: 700;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.welcome-btn button:hover {
+  box-shadow: 0 0 8px;
+}
+
+.welcome-sign-up a {
+  text-decoration: none;
+}
+
+.welcome-sign-up a:hover {
+  text-decoration: underline;
+}
