@@ -12,6 +12,7 @@ public class CustomerService {
 
     private CustomerRepo customerRepo;
 
+
     public List<Customer> getCustomers() {
         return customerRepo.findAll();
     }
@@ -19,5 +20,9 @@ public class CustomerService {
     @Autowired
     public void setCustomerRepo(CustomerRepo customerRepo) {
         this.customerRepo = customerRepo;
+    }
+
+    public void addCustomer(Customer customer) {
+        customerRepo.save(customer);
     }
 }
