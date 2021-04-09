@@ -18,6 +18,8 @@ public class Customer {
     private String lastName;
     private String city;
     private String country;
+    private int kilometers;
+    private int intersections;
 
     public String getEmail() {
         return email;
@@ -26,6 +28,24 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+     public int getKilometers() {
+        return kilometers;
+    }
+
+
+    public void setKilometers(int kilometers) {
+        this.kilometers = kilometers;
+    }
+    
+     public int getIntersections() {
+        return intersections;
+    }
+
+
+    public void setIntersections(int intersections) {
+        this.intersections = intersections;
     }
 
     public String getPassword() {
