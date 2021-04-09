@@ -24,6 +24,13 @@ public class CustomerController{
 
     @GetMapping(path = {"/", ""})
     public List<Customer> getCustomers() {
+        Customer customer = new Customer();
+
+        customer.setName("lel");
+        customer.setAge(15);
+
+        customerService.addCustomer(customer);
+        
         return customerService.getCustomers();
     }
 
