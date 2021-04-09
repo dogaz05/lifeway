@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/norm-styles.css}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+  <script src="https://kit.fontawesome.com/e958cd86be.js" crossorigin="anonymous"></script> <!-- FONT AWSOME ICONS -->
+  <title>LifeWay | Create the highway of your life</title>
+</head>
+<body class="welcome-body dark">
+<nav class="welcome-nav">
+  <div><a class="welcome-create-btn" th:href="@{/customer/create}">CREATE ACCOUNT</a></div>
+  <label for="show" class="show-btn">
+    <div><span class="welcome-nav-btn">login</span></div>
+  </label>
+
+</nav>
+
+<!-- <img class="welcome-logo" src="resources/lifeway_logo_docaralho.png" alt="LifeWay | Life is a highway"> -->
+
+<section>
+</section>
+
+<section class="welcome-user-menu">
+  <input type="checkbox" id="show">
+  <label for="show" class="show-btn"></label>
+  <div class="welcome-user-menu-container">
+    <label for="show" class="fas fa-times" th:href="@{/customer}"></label>
+    <p class="welcome-user-menu-text">User Login</p>
+    <form th:object="${customer}" th:action="@{/customer}" method="post">
+      <div class="data">
+        <label for="email"> e-mail: </label>
+        <input id="email" type="email" th:field="*{email}" required/>
+      </div>
+
+      <div class="data">
+        <label for="password">Password: </label>
+        <input id="password" type="text" th:field="*{password}" required/>
+      </div>
+
+      <a class="welcome-forgot-pass" href="#">Forgot Password?</a>
+      <div class="welcome-btn">
+        <div class="welcome-btn-inner"></div>
+        <button type="submit" th:href="@{/customer/login}">Login</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+</body>

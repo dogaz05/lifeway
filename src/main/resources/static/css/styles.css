@@ -27,6 +27,10 @@ body {
   align-items: center;
 }
 
+.dark {
+  opacity: 0.3;
+}
+
 .welcome-logo {
   margin-top: 0rem;
   width: 50%;

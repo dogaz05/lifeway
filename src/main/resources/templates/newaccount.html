@@ -10,13 +10,13 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="https://kit.fontawesome.com/e958cd86be.js" crossorigin="anonymous"></script> <!-- FONT AWSOME ICONS -->
-    <title>LifeWay | Create the highway of your life</title>
+    <title>LifeWay | Create your account</title>
 </head>
 
 <body class="signup-body">
     <div>
         <nav class="signup-nav">
-            <div><a class="navbar-logo" th:href="@{/customer}"><img src="../resources/lifewaylogo_navbar.png" alt="LifeWay nav logo"></a></div>
+            <div><a class="navbar-logo" th:href="@{/customer}"><img src="../images/lifewaylogo_navbar.png" alt="LifeWay nav logo"></a></div>
             <div><span><a href="#">Edit Profile</a></span><span><a href="#">Settings</a></span><span><a
                     href="main-view.html">Logout</a></span></div>
         </nav>
@@ -69,7 +69,7 @@
 
                 <div class="account-data">
                     <label for="password">Password: </label>
-                    <input id="password" type="text" th:field="*{password}" required/>
+                    <input id="password" type="password" th:field="*{password}" required/>
                 </div>
 
                 <div class="account-data">
@@ -89,7 +89,7 @@
             </form>
         </div>
         <div>
-            <img class="img-form" alt="imagem" src="../resources/route-66.png">
+            <img class="img-form" alt="imagem" src="../images/route-66.png">
         </div>
     </section>
     
