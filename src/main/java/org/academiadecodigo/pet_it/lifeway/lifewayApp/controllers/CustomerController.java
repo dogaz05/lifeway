@@ -20,21 +20,19 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    /*@GetMapping(path = {"/", ""})
-    public Customer getStart() {
 
-        Customer customer = new Customer();
+    public void hardCodeCustomer() {
+
         Customer customer1 = new Customer();
-        customer1.setEmail("joaobarroso@joaobarroso.com");
-        customer1.setPassword("password");
-        customer1.setFirstName("Joao");
-        customer1.setLastName("Barroso");
-        customer1.setCity("Barcelos");
+        customer1.setEmail("luis@infelix.ateja");
+        customer1.setPassword("lel");
+        customer1.setFirstName("Luis");
+        customer1.setLastName("Felix");
+        customer1.setCity("Nova Gaia");
         customer1.setCountry("Portugal");
         customerService.addCustomer(customer1);
 
-        return customer;
-    }*/
+    }
 
 
 
@@ -64,6 +62,8 @@ public class CustomerController {
     @GetMapping(path = {"", "/"})
     public String loginCustomer(Model m) {
 
+        hardCodeCustomer();
+
         Customer customer = new Customer();
         m.addAttribute("customer", customer);
         return "main-view";
@@ -82,7 +82,6 @@ public class CustomerController {
 
     @PostMapping(path = {"/login"})
     public String login(@ModelAttribute Customer customer) {
-
        return (customerService.login(customer) == null) ? "main-view" : "profile-page";
     }
 

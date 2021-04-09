@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -16,8 +16,8 @@
 <body class="signup-body">
     <div class="grid-container">
         <nav class="signup-nav">
-            <div><a class="navbar-logo" href=""><img src="../resources/lifewaylogo_navbar.png" alt="LifeWay nav logo"></a></div>
-            <div><span><a href="#">Edit Profile</a></span><span><a href="#">Settings</a></span><span><a href="../index.html">Logout</a></span></div>
+            <div><a class="navbar-logo" th:href="@{/}"><img src="../images/lifewaylogo_navbar.png" alt="LifeWay nav logo"></a></div>
+            <div><span><a href="#">Edit Profile</a></span><span><a href="#">Settings</a></span><span><a th:href="@{/}">Logout</a></span></div>
         </nav>
     </div>
 
@@ -41,6 +41,10 @@
                 <p>Porto, Portugal</p>
                 <p>811 kilometers</p>
                 <p>17 intersections</p>
+                <p>
+                    latitude: <span id="latitude"></span>&deg;<br/>
+                    longitude: <span id="longitude"></span>&deg;<br/>
+                </p>
             </div>
             <div>
                 <a class="anchor-btn choose-btn" href="#">Choose your destiny</a>
@@ -48,18 +52,30 @@
         </div>
         <div class="signup-dejavu">
             <a class="anchor-btn" href="#">Déjà Vu</a>
-            <a href="#"><img alt="imagem do signup-dejavu" src="../resources/1024_720.jpg"></a>
-            <a href="#"><img alt="imagem do signup-dejavu" src="../resources/a-day-trip-braga-7b0ac18daecc1a525af0f13a4dbbdc02.jpeg"></a>
-            <a href="#"><img alt="imagem do signup-dejavu" src="../resources/ponte-d.luis_.png"></a>
+            <a href="#"><img alt="imagem do signup-dejavu" src="../images/1024_720.jpg"></a>
+            <a href="#"><img alt="imagem do signup-dejavu" src="../images/a-day-trip-braga-7b0ac18daecc1a525af0f13a4dbbdc02.jpeg"></a>
+            <a href="#"><img alt="imagem do signup-dejavu" src="../images/ponte-d.luis_.png"></a>
         </div>
 
     </section>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
         <script src="../js/img-uploader.js"></script>
+    <script>
+        if('geolocation' in navigator){
+            console.log('geolocation available');
+            navigator.geolocation.getCurrentPosition(position => {
+                const lat= position.coords.latitude;
+                const lon= position.coords.longitude;
+                document.getElementById('latitude').textContent = lat;
+                document.getElementById('longitude').textContent = lon;
+            });
+        }else{
+            console.log('geolocation not available');
+        }
+    </script>
 </body>
 
 </html>
