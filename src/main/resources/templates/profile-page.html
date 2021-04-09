@@ -37,10 +37,13 @@
             </p>
             </div>
             <div class="signup-profile-details">
-                <p>Luís Félix</p>
-                <p>Porto, Portugal</p>
-                <p>811 kilometers</p>
-                <p>17 intersections</p>
+             <p th:text="${customer.firstName}"></p>
+             <p th:text="${customer.city}"></p>
+             <p th:text="${customer.Portugal}"></p>
+             <p th:text="${customer.firstName}"></p>
+                <p th:text="${customer.kilometers}"></p>
+             <p th:text="${customer.intersections}"></p>
+                
                 <p>
                     latitude: <span id="latitude"></span>&deg;<br/>
                     longitude: <span id="longitude"></span>&deg;<br/>
