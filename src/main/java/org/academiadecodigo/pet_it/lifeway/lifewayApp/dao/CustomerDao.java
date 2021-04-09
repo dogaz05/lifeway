@@ -19,6 +19,7 @@ public class CustomerDao {
         this.customerMapLogin = new HashMap<>();
         this.customerList = new ArrayList<>();
         this.customerIds = new HashMap<>();
+
     }
 
     public Map<String, String> getCustomerMapLogin() {

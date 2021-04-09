@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <thymeleaf xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+               th:fragment="header" th:remove="tag">
+        <title>JavaBank</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" modelType="text/css"/>
+        <link rel="favicon" href="https://pbs.twimg.com/profile_images/1359517336605241344/B6O1jDyV.jpg" />
+        <script modelType="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script modelType="application/javascript" async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    </thymeleaf>
+</head>
+<body>
+<div class="container">
+    <h2>Customer List</h2>
+    <div th:if="${not #lists.isEmpty(customers)}">
+        <table class="table table-striped">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Country</th>
+                <th>City</th>
+            </tr>
+            <tr th:each="customer : ${customers}">
+                <td th:text="${customer.firstName}"></td>
+                <td th:text="${customer.lastName}"></td>
+                <td th:text="${customer.email}"></td>
+                <td th:text="${customer.country}"></td>
+                <td th:text="${customer.city}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

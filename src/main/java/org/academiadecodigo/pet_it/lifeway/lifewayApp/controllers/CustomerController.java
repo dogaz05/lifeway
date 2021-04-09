@@ -3,14 +3,15 @@ package org.academiadecodigo.pet_it.lifeway.lifewayApp.controllers;
 import org.academiadecodigo.pet_it.lifeway.lifewayApp.model.Customer;
 import org.academiadecodigo.pet_it.lifeway.lifewayApp.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 
-@RestController
-@RequestMapping(path = "")
+
+@Controller
+@RequestMapping(path = "/customer")
 public class CustomerController {
 
     private CustomerService customerService;
@@ -20,7 +21,7 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @GetMapping(path = {"/", ""})
+    /*@GetMapping(path = {"/", ""})
     public Customer getStart() {
 
         Customer customer = new Customer();
@@ -34,22 +35,45 @@ public class CustomerController {
         customerService.addCustomer(customer1);
 
         return customer;
+    }*/
+
+    @GetMapping( path = {"", "/", "list"})
+    public String getCustomers(Model model) {
+        model.addAttribute("customers", customerService.getCustomerList());
+        return "test";
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE , path = {"/savecustomer"})
+
+    /*@PostMapping(path = {"/savecustomer"})
     public Customer newCustomer(@RequestBody Customer customer) {
         if(customerService.addCustomer(customer) == null){
-            return getStart();
+            return null;
         }
         return customerService.login(customer);
+    }*/
+
+    @GetMapping(path = "/create")
+    public String createCustomer(Model m) {
+
+        Customer customer = new Customer();
+        m.addAttribute("customer", customer);
+        return "form_test";
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE , path = {"/login"})
-    public Customer login(@RequestBody Customer customer) {
-        if(customerService.login(customer) == null){
-            return getStart();
+    @RequestMapping(path = {"/", ""}, method = RequestMethod.POST)
+    public String saveCustomer(@ModelAttribute Customer customer) {
+
+        if(customerService.addCustomer(customer) == null){
+            return "sign-up";
         }
-        return customerService.login(customer);
+
+        customerService.addCustomer(customer);
+        return "redirect:/customer/list";
+    }
+
+    @PostMapping(path = {"/login"})
+    public String login(@RequestBody Customer customer) {
+       return (customerService.login(customer) == null) ? "sign-up" : "test";
     }
 
 
