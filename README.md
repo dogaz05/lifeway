@@ -3,7 +3,7 @@
 
 # LIFEWAY
 
-LIFEWAY is an App based on Tom Cochrane's song "Life Is A Highway", built during <Academia de Cógio_> 65_ASYNCtomatic HACKathon. 
+LIFEWAY is an App based on Tom Cochrane's song "Life Is A Highway", built during <Academia de Código_> 65_ASYNCtomatic HACKathon. 
 It's about traveling and meeting other person while doing it.
 
 ## Installation
