@@ -1,6 +1,7 @@
 package org.academiadecodigo.pet_it.lifeway.lifewayApp.services;
 
-import org.academiadecodigo.pet_it.lifeway.lifewayApp.dao.CustomerRepo;
+
+import org.academiadecodigo.pet_it.lifeway.lifewayApp.dao.FakeDaoDao;
 import org.academiadecodigo.pet_it.lifeway.lifewayApp.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,19 +11,20 @@ import java.util.List;
 @Service
 public class CustomerService {
 
-    private CustomerRepo customerRepo;
+    //private CustomerRepo customerRepo;
+    private FakeDaoDao fakeDaoDao;
 
 
     public List<Customer> getCustomers() {
-        return customerRepo.findAll();
+        return fakeDaoDao.getCustomerList();
     }
 
     @Autowired
-    public void setCustomerRepo(CustomerRepo customerRepo) {
-        this.customerRepo = customerRepo;
+    public void setFakeDaoDao(FakeDaoDao fakeDaoDao) {
+        this.fakeDaoDao = fakeDaoDao;
     }
 
     public void addCustomer(Customer customer) {
-        customerRepo.save(customer);
+        fakeDaoDao.getCustomerList().add(customer);
     }
 }
