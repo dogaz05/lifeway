@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-@RequestMapping(path = "/customer")
 public class CustomerController {
 
     private CustomerService customerService;
@@ -62,7 +61,7 @@ public class CustomerController {
         return "newaccount";
     }
 
-    @GetMapping()
+    @GetMapping(path = {"", "/"})
     public String loginCustomer(Model m) {
 
         Customer customer = new Customer();
@@ -78,15 +77,14 @@ public class CustomerController {
         }
 
         customerService.addCustomer(customer);
-        return "sign-up";
+        return "profile-page";
     }
 
     @PostMapping(path = {"/login"})
     public String login(@ModelAttribute Customer customer) {
 
-       return (customerService.login(customer) == null) ? "main-view" : "sign-up";
+       return (customerService.login(customer) == null) ? "main-view" : "profile-page";
     }
-
 
 
 }

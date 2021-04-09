@@ -13,7 +13,7 @@
 </head>
 <body class="welcome-body">
     <nav class="welcome-nav">
-      <div><a class="welcome-create-btn" th:href="@{/customer/create}">CREATE ACCOUNT</a></div>
+      <div><a class="welcome-create-btn" th:href="@{/create}">CREATE ACCOUNT</a></div>
       <label for="show" class="show-btn">
         <div><span class="welcome-nav-btn">login</span></div>
     </label>
@@ -31,7 +31,7 @@
         <div class="welcome-user-menu-container">
             <label for="show" class="close-btn fas fa-times"></label>
             <p class="welcome-user-menu-text">User Login</p>
-            <form th:object="${customer}" th:action="@{/customer}" method="post">
+            <form th:object="${customer}" th:action="@{/login}" method="post">
                 <div class="data">
                     <label for="email"> e-mail: </label>
                     <input id="email" type="email" th:field="*{email}" required/>
@@ -45,7 +45,7 @@
                 <a class="welcome-forgot-pass" href="#">Forgot Password?</a>
                 <div class="welcome-btn">
                     <div class="welcome-btn-inner"></div>
-                    <button type="submit" th:href="@{/customer/login}">Login</button>
+                    <button type="submit">Login</button>
                 </div>
             </form>
         </div>
