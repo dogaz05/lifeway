@@ -28,7 +28,6 @@ public class CustomerService {
         }
     }
 
-
     int counter = 0;
 
     public Customer addCustomer(Customer customer) {
