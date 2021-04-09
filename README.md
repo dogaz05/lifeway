@@ -15,7 +15,11 @@ Right now, it is under developing.
 All the contributors:
 
 [Rute Coelho](https://github.com/Xanoka)
+<br>
 [João Barroso](https://github.com/JoaoBarroso92)
+<br>
 [Luís Félix](https://github.com/luisfelix84)
+<br>
 [João Melo](https://github.com/jbfmello)
+<br>
 [Diogo Rocha](https://github.com/dogaz05)
