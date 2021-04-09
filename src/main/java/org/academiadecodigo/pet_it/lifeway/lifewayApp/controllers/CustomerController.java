@@ -22,14 +22,12 @@ public class CustomerController{
 
     @GetMapping(path = {"/", ""})
     public List<Customer> getCustomers() {
+
         Customer customer = new Customer();
 
         customer.setName("lel");
         customer.setAge(15);
-
-        if (!customerService.getCustomers().contains(customer)) {
-            customerService.addCustomer(customer);
-        }
+        
 
         return customerService.getCustomers();
     }
