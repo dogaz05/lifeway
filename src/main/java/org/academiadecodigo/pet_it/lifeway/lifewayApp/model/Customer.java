@@ -1,20 +1,21 @@
 package org.academiadecodigo.pet_it.lifeway.lifewayApp.model;
 
 
-import javax.persistence.*;
+import org.springframework.stereotype.Component;
 
-@Entity
-@Table(name = "customer")
+/*@Entity
+@Table(name = "customer")*/
+@Component
 public class Customer {
 
 
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer id;*/
     private String name;
     private Integer age;
 
-    @Version
+   /* @Version
     private Integer version;
 
     public Integer getId() {
@@ -23,7 +24,7 @@ public class Customer {
 
     public void setId(Integer id) {
         this.id = id;
-    }
+    }*/
 
     public String getName() {
         return name;
@@ -41,21 +42,13 @@ public class Customer {
         this.age = age;
     }
 
-    public Integer getVersion() {
+   /* public Integer getVersion() {
         return version;
     }
 
     public void setVersion(Integer version) {
         this.version = version;
-    }
+    }*/
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", version=" + version +
-                '}';
-    }
+
 }

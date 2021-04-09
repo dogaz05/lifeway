@@ -10,8 +10,8 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(path = "api/customer")
-public class CustomerController{
+@RequestMapping(path = "/api/customer")
+public class CustomerController {
 
     private CustomerService customerService;
 
@@ -22,11 +22,19 @@ public class CustomerController{
 
     @GetMapping(path = {"/", ""})
     public List<Customer> getCustomers() {
+
+        Customer customer = new Customer();
+
+        customer.setName("lel");
+        customer.setAge(15);
+
+        customerService.addCustomer(customer);
+
         return customerService.getCustomers();
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void newCustomer(@RequestBody Customer customer)  {
+    public void newCustomer(@RequestBody Customer customer) {
         customerService.addCustomer(customer);
     }
 }
