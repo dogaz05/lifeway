@@ -27,7 +27,8 @@ public class CustomerController{
 
         customer.setName("lel");
         customer.setAge(15);
-        
+
+        customerService.addCustomer(customer);
 
         return customerService.getCustomers();
     }
