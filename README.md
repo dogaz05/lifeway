@@ -1,6 +1,5 @@
 <br>
 <img width="500" src="https://github.com/dogaz05/lifeway/blob/main/src/main/resources/static/images/lifeway_logo_docaralho.png"/>
-br
 
 # LIFEWAY
 
