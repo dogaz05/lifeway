@@ -5,9 +5,6 @@ import org.academiadecodigo.pet_it.lifeway.lifewayApp.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
-
 @Service
 public class CustomerService {
 
@@ -20,26 +17,27 @@ public class CustomerService {
     }
 
 
-    public Customer login(Customer customer){
-        if(customerDao.getCustomerMapLogin().containsKey(customer.getEmail()) &&
-                customerDao.getCustomerMapLogin().get(customer.getEmail()).equals(customer.getPassword())){
+    public Customer login(Customer customer) {
+        if (customerDao.getCustomerMapLogin().containsKey(customer.getEmail()) &&
+                customerDao.getCustomerMapLogin().get(customer.getEmail()).equals(customer.getPassword())) {
             return customerDao.getCustomerList().get(customerDao.getCustomerIds().get(customer.getEmail()));
-        }else {
+        } else {
             return null;
         }
     }
 
 
-    int couter = 0;
+    int counter = 0;
+
     public Customer addCustomer(Customer customer) {
 
-        if(!customerDao.getCustomerMapLogin().containsKey(customer.getEmail())){
+        if (!customerDao.getCustomerMapLogin().containsKey(customer.getEmail())) {
             customerDao.getCustomerList().add(customer);
             customerDao.getCustomerMapLogin().put(customer.getEmail(), customer.getPassword());
-            customerDao.getCustomerIds().put(customer.getEmail(), couter);
-            couter++;
+            customerDao.getCustomerIds().put(customer.getEmail(), counter);
+            counter++;
             return customerDao.getCustomerList().get(customerDao.getCustomerIds().get(customer.getEmail()));
-        }else
-        return null;
+        } else
+            return null;
     }
 }

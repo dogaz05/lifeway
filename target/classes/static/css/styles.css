@@ -19,7 +19,7 @@ body {
 *****************/
 
 .welcome-body {
-  background-image: url("../resources/lifeway_landingpage2.jpg");
+  background-image: url("../../templates/views/resources/lifeway_landingpage2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;

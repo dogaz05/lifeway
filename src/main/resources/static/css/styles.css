@@ -1,0 +1,289 @@
+/* GENERAL
+************/
+
+html {
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  background-color: rgba(220, 220, 220, 0.679);
+  height: 100%;
+  width: 100%;
+}
+
+.navbar-logo img {
+  width: 25%;
+}
+
+/* WELCOME VIEW
+*****************/
+
+.welcome-body {
+  background-image: url("../../templates/views/resources/lifeway_landingpage2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-logo {
+  margin-top: 0rem;
+  width: 50%;
+  display: block;
+}
+
+.welcome-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.welcome-nav div {
+  margin: 1rem;
+}
+
+.welcome-nav-btn {
+  text-decoration: none;
+  background-color: #ffd200;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: 700;
+  padding: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.welcome-nav-btn:hover {
+  box-shadow: 0 0 8px;
+}
+
+.welcome-user-menu {
+  margin-top: 15rem;
+}
+
+.welcome-create-btn {
+  text-decoration: none;
+  color: #ffd200;
+  background-color: rgba(72, 72, 72);
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: 700;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.welcome-create-btn:hover {
+  box-shadow: 0 0 8px black;
+  color: #ffd200;
+}
+
+.welcome-user-menu-container {
+  display: none;
+  background-color: rgba(221, 221, 221, 0.9);
+  width: 300px;
+  padding: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.welcome-user-menu-container .close-btn:hover {
+  color: #ffd200;
+  cursor: pointer;
+}
+
+#show:checked ~ .welcome-user-menu-container {
+  display: block;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.welcome-user-menu-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.welcome-user-menu-text form .data {
+  height: 45%;
+  width: 100%;
+}
+
+form .data input {
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  border: 1px solid lightgray;
+}
+
+.welcome-forgot-pass {
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.welcome-btn {
+  margin: 15px;
+  text-align: center;
+}
+
+.welcome-btn button {
+  background-color: #ffd200;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: 700;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.welcome-btn button:hover {
+  box-shadow: 0 0 8px;
+}
+
+/* SIGN UP PAGE 
+****************/
+
+.signup-body {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+}
+
+.signup-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.signup-nav div {
+  margin: 1rem 1rem 0 1rem;
+}
+
+.signup-nav div span {
+  padding: 1rem;
+}
+
+.signup-nav div span a {
+  text-decoration: none;
+  color: black;
+}
+
+.signup-nav div span a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  width: 100%;
+  background: #ffd200;
+  border: none;
+  padding: 4px;
+}
+
+.signup {
+  display: flex;
+  justify-content: space-around;
+}
+
+.signup-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-profile-details {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-dejavu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signup-dejavu a {
+  margin: 0.5rem;
+  transition: all 0.4s;
+}
+
+.signup-dejavu a:hover {
+  transform: scale(1.2);
+}
+
+.signup-dejavu .anchor-btn,
+.choose-btn {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  background-color: #ffd200;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.signup-dejavu img {
+  display: block;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.anchor-btn:hover {
+  box-shadow: 0 0 8px black;
+  color: black;
+}
+
+/* FORM PAGE 
+****************/
+
+.account {
+  display: flex;
+  height: 99%;
+}
+
+.account-form,
+.img-form {
+  width: 50%;
+}
+
+.account-data {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+form .account-data input {
+  height: 100%;
+  width: 80%;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.account-data label {
+  display: block;
+  text-align: center;
+}
+
+.img-form {
+  width: 99%;
+  height: 100%;
+}
