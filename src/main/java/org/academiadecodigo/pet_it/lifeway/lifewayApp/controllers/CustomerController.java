@@ -37,7 +37,9 @@ public class CustomerController {
         return customer;
     }*/
 
-    @GetMapping( path = {"", "/", "list"})
+
+
+    @GetMapping( path = {"/list"})
     public String getCustomers(Model model) {
         model.addAttribute("customers", customerService.getCustomerList());
         return "test";
@@ -57,26 +59,33 @@ public class CustomerController {
 
         Customer customer = new Customer();
         m.addAttribute("customer", customer);
-        return "form_test";
+        return "newaccount";
+    }
+
+    @GetMapping()
+    public String loginCustomer(Model m) {
+
+        Customer customer = new Customer();
+        m.addAttribute("customer", customer);
+        return "main-view";
     }
 
     @RequestMapping(path = {"/", ""}, method = RequestMethod.POST)
     public String saveCustomer(@ModelAttribute Customer customer) {
 
         if(customerService.addCustomer(customer) == null){
-            return "sign-up";
+            return "main-view";
         }
 
         customerService.addCustomer(customer);
-        return "redirect:/customer/list";
+        return "sign-up";
     }
 
     @PostMapping(path = {"/login"})
-    public String login(@RequestBody Customer customer) {
-       return (customerService.login(customer) == null) ? "sign-up" : "test";
+    public String login(@ModelAttribute Customer customer) {
+
+       return (customerService.login(customer) == null) ? "main-view" : "sign-up";
     }
-
-
 
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -16,16 +16,16 @@
 <body class="signup-body">
     <div>
         <nav class="signup-nav">
-            <div><a class="navbar-logo" href=""><img src="../resources/lifewaylogo_navbar.png" alt="LifeWay nav logo"></a></div>
+            <div><a class="navbar-logo" th:href="@{/customer}"><img src="../resources/lifewaylogo_navbar.png" alt="LifeWay nav logo"></a></div>
             <div><span><a href="#">Edit Profile</a></span><span><a href="#">Settings</a></span><span><a
-                    href="index.html">Logout</a></span></div>
+                    href="main-view.html">Logout</a></span></div>
         </nav>
     </div>
     <hr>
     <section class="account">
         <div class="account-form">
-            <form action="#">
-                <div class="account-data">
+            <!---<form action="#">-->
+                <!--<div class="account-data">
                     <label for="firstname">First Name</label>
                     <input type="text" name="firstname" id="account-firstname" required>
                 </div>
@@ -48,8 +48,40 @@
                 <div class="account-data">
                     <label for="country">Country</label>
                     <input type="text" name="country" id="account-country" required>
+                </div>-->
+            <form th:object="${customer}" th:action="@{/customer}" method="post">
+
+
+                <div class="account-data">
+                    <label for="firstName">First Name: </label>
+                    <input id="firstName" type="text" th:field="*{firstName}" required/>
                 </div>
-                
+
+                <div class="account-data">
+                    <label for="lastName">Last Name: </label>
+                    <input id="lastName" type="text" th:field="*{lastName}" required/>
+                </div>
+
+                <div class="account-data">
+                    <label for="email"> e-mail: </label>
+                    <input id="email" type="email" th:field="*{email}" required/>
+                </div>
+
+                <div class="account-data">
+                    <label for="password">Password: </label>
+                    <input id="password" type="text" th:field="*{password}" required/>
+                </div>
+
+                <div class="account-data">
+                    <label for="country">Country: </label>
+                    <input id="country" type="text" th:field="*{country}" required/>
+                </div>
+
+                <div class="account-data">
+                    <label for="city">City: </label>
+                    <input id="city" type="text" th:field="*{city}" required/>
+                </div>
+
                 <div class="welcome-btn">
                     <div class="welcome-btn-inner"></div>
                     <button type="submit">SUBMIT YOUR INFO</button>
