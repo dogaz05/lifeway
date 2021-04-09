@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(path = "api/customer")
+@RequestMapping(path = "/api/customer")
 public class CustomerController{
 
     private CustomerService customerService;
@@ -30,7 +30,7 @@ public class CustomerController{
         customer.setAge(15);
 
         customerService.addCustomer(customer);
-        
+
         return customerService.getCustomers();
     }
 
