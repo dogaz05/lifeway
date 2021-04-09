@@ -1,30 +1,45 @@
 package org.academiadecodigo.pet_it.lifeway.lifewayApp.services;
 
-
-import org.academiadecodigo.pet_it.lifeway.lifewayApp.dao.FakeDaoDao;
+import org.academiadecodigo.pet_it.lifeway.lifewayApp.dao.CustomerDao;
 import org.academiadecodigo.pet_it.lifeway.lifewayApp.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class CustomerService {
 
     //private CustomerRepo customerRepo;
-    private FakeDaoDao fakeDaoDao;
-
-
-    public List<Customer> getCustomers() {
-        return fakeDaoDao.getCustomerList();
-    }
+    private CustomerDao customerDao;
 
     @Autowired
-    public void setFakeDaoDao(FakeDaoDao fakeDaoDao) {
-        this.fakeDaoDao = fakeDaoDao;
+    public void setFakeDaoDao(CustomerDao customerDao) {
+        this.customerDao = customerDao;
     }
 
-    public void addCustomer(Customer customer) {
-        fakeDaoDao.getCustomerList().add(customer);
+
+    public Customer login(Customer customer){
+        if(customerDao.getCustomerMapLogin().containsKey(customer.getEmail()) &&
+                customerDao.getCustomerMapLogin().get(customer.getEmail()).equals(customer.getPassword())){
+            return customerDao.getCustomerList().get(customerDao.getCustomerIds().get(customer.getEmail()));
+        }else {
+            return null;
+        }
+    }
+
+
+    int couter = 0;
+    public Customer addCustomer(Customer customer) {
+
+        if(!customerDao.getCustomerMapLogin().containsKey(customer.getEmail())){
+            customerDao.getCustomerList().add(customer);
+            customerDao.getCustomerMapLogin().put(customer.getEmail(), customer.getPassword());
+            customerDao.getCustomerIds().put(customer.getEmail(), couter);
+            couter++;
+            return customerDao.getCustomerList().get(customerDao.getCustomerIds().get(customer.getEmail()));
+        }else
+        return null;
     }
 }
