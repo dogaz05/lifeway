@@ -14,15 +14,51 @@
 </head>
 
 <body class="signup-body">
-    <div class="grid-container">
+    <div>
         <nav class="signup-nav">
-            <div><a href="">lifeway</a></div>
-            <div><span><a href="#">Edit Profile</a></span><span><a href="#">Settings</a></span></div>
+            <div><a class="navbar-logo" href=""><img src="../resources/lifewaylogo_navbar.png" alt="LifeWay nav logo"></a></div>
+            <div><span><a href="#">Edit Profile</a></span><span><a href="#">Settings</a></span><span><a
+                    href="../index.html">Logout</a></span></div>
         </nav>
     </div>
-
     <hr>
-
+    <section class="account">
+        <div class="account-form">
+            <form action="#">
+                <div class="account-data">
+                    <label for="firstname">First Name</label>
+                    <input type="text" name="firstname" id="account-firstname" required>
+                </div>
+                <div class="account-data">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" name="lastname" id="account-lastname" required>
+                </div>
+                <div class="account-data">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="account-email" required>
+                </div>
+                <div class="account-data">
+                    <label for="email">Password</label>
+                    <input type="text" name="email" id="account-password" required>
+                </div>
+                <div class="account-data">
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="account-city" required>
+                </div>
+                <div class="account-data">
+                    <label for="country">Country</label>
+                    <input type="text" name="country" id="account-country" required>
+                </div>
+                
+                <div class="welcome-btn">
+                    <div class="welcome-btn-inner"></div>
+                    <button type="submit">SUBMIT YOUR INFO</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <img class="img-form" alt="imagem" src="../resources/route-66.png">
+        </div>
+    </section>
     
-
 </html>
